@@ -1,1 +1,1 @@
-# E-L
+# EL-Letters-Animations
