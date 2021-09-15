@@ -1,0 +1,240 @@
+/* body{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+div{
+    width: 200px;
+    height: 200px;
+    position: relative;
+}
+
+div::before{
+    content: "Front";
+    width: 200px;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.5s;
+    transition-duration: 0.5s;
+    color: white;
+    font-size: 30px;
+    background-color: #fa3664;
+
+}
+
+div:hover::before{
+    content: "Back";
+    background-color: #1692fc;
+    transform: rotatex(180deg);
+} */
+
+
+
+
+/* 
+div::after{
+
+}
+
+div::before{
+    content: "Front";
+    width: 200px;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.5s;
+    transition-duration: 0.5s;
+    color: white;
+    font-size: 30px;
+    background-color: #fa3664;
+
+}
+
+div::after{
+    content: "";
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    top: 0%;
+    left: 0%;    
+    text-align: center;
+    vertical-align: middle;
+    line-height: 200px;
+    color: white;
+    font-size: 30px;    
+    transition: 5s;
+
+}
+
+div:hover::after{
+    content: "Back";    
+}
+
+div:hover::before{
+    content: "";    
+    transform: rotatey(180deg);    
+    background-color: #1692fc;
+    z-index: -1;
+
+} */
+
+body{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.parent{
+    display: grid;
+    grid-template-columns: repeat(9, 50px);
+}
+
+.E{
+    grid-column: 1/5;
+    display: grid;
+    grid-template-columns: repeat(4, 50px);
+    grid-template-rows: repeat(7, 50px);
+    position: relative;
+}
+
+.top{
+    grid-area: 1 / 1 / 2 / 5;
+    background-color: #323234;
+}
+
+.center{
+    grid-area: 4 / 1 / 5 / 5;
+    background-color: #323234;
+}
+
+.bottom{
+    grid-area: 7 / 1 / 8 / 5;
+    background-color: #323234;
+}
+
+.left{
+    grid-area: 1 / 1 / 8 / 2;
+    background-color: #323234;
+}
+
+.E::before{
+    content: "";
+    background-color: #fea604;
+    height: 40px;
+    width: 40px;
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    animation-name:moveE;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+}
+@keyframes moveE {
+    0% {
+        top: 5px;
+        left: 155px;
+    }
+    8.5% {
+        top: 5px;
+        left: 5px;
+    }
+    17% {
+        top: 155px;
+        left: 5px;
+    }
+    25.5% {
+        top: 155px;
+        left: 155px;    
+    }
+    31% {
+        top: 155px;
+        left: 5px;
+    }
+    42% {
+        top: 305px;
+        left: 5px;
+    }
+    50.5% {
+        top: 305px;
+        left: 155px;      
+    }
+    58.75% {
+        top: 305px;
+        left: 5px;    
+    }
+    64% {
+        top: 5px;
+        left: 5px;    
+    }
+    70% {
+        top: 5px;
+        left: 155px;      
+    }
+    100%{
+        top: 5px;
+        left: 155px;   
+    }
+}
+
+
+.L{
+    grid-column: 6/10;
+    display: grid;
+    grid-template-columns: repeat(4, 50px);
+    grid-template-rows: repeat(7, 50px);
+    position: relative;
+}
+
+.L::before{
+    content: "";
+    background-color: transparent;
+    height: 40px;
+    width: 40px;
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    animation-name:moveL;
+    animation-duration: 10s;
+    animation-delay: 7s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+}
+
+@keyframes moveL {
+    0%{
+        top: 305px;
+        left: 155px; 
+        background-color: #fea604; 
+    }
+    12.5%{
+        top: 305px;
+        left: 5px;  
+        background-color: #fea604; 
+    }
+
+    25% {
+        top: 5px;
+        left: 5px;
+        background-color: #fea604; 
+    }
+
+    30% {
+        top: 5px;
+        left: 5px;
+        background: transparent;
+    }
+
+    31%{        
+        top: 305px;
+        left: 155px;          
+        }
+}
